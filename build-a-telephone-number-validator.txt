@@ -1,0 +1,58 @@
+** start of undefined **
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Telephone Number Validator</title>
+    <meta charset="UTF-8">
+    </head>
+    <body>
+      <input type="text" id="user-input">
+      <button id="check-btn">Check</button>
+      <button id="clear-btn">Clear</button>
+      <div id="results-div"></div>
+      <script src="script.js"></script>
+      </body>
+      </html>
+
+** end of undefined **
+
+** start of undefined **
+
+let userInput = document.getElementById("user-input");
+let checkBtn = document.getElementById("check-btn");
+let clearBtn = document.getElementById("clear-btn");
+let resultsDiv = document.getElementById("results-div");
+
+function checkNumber() {
+  const regex = /^(1\s?)?(\(\d{3}\)|\d{3})[\s\-]?\d{3}[\s\-]?\d{4}$/;
+
+  if (userInput.value == "") {
+    return alert("Please provide a phone number");
+  }
+
+  let item = document.createElement("li");
+  resultsDiv.appendChild(item);
+  if (regex.test(userInput.value)) {
+    item.innerHTML = "Valid US number: " + userInput.value;
+    userInput.value = "";
+  } else {
+    item.innerHTML = "Invalid US number: " + userInput.value;
+    userInput.value = "";
+  }
+}
+
+checkBtn.addEventListener("click", checkNumber);
+
+clearBtn.addEventListener("click", () => {
+  resultsDiv.innerHTML = "";
+})
+
+** end of undefined **
+
+** start of undefined **
+
+
+
+** end of undefined **
+
